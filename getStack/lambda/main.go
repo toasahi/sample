@@ -2,22 +2,29 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 
+	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/cloudformation"
 )
 
-type Event struct {
-	StackName string `json:"stackName"`
+type Response struct {
+	Email string `json:"email"`
 }
 
-func HandleRequest(ctx context.Context, event Event) *cloudformation.DescribeStacksOutput {
+func HandleRequest(ctx context.Context, event events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	svc := cloudformation.New(session.New())
+	// name := event.PathParameters["stackName"]
+	test2 := event.MultiValueQueryStringParameters["test"][1]
+	// fmt.Print(request.QueryStringParameters["stackName"])
+	// name := request.QueryStringParameters["stackName"]
 	input := &cloudformation.DescribeStacksInput{
-		StackName: &event.StackName,
+		StackName: &test2,
 	}
 
 	result, err := svc.DescribeStacks(input)
@@ -33,13 +40,29 @@ func HandleRequest(ctx context.Context, event Event) *cloudformation.DescribeSta
 				fmt.Println(aerr.Error())
 			}
 		} else {
-			// Print the error, cast err to awserr.Error to get the Code and
-			// Message from an error.
 			fmt.Println(err.Error())
 		}
 	}
 
-	return result
+	parameter := result.Stacks[0].Parameters
+
+	email := ""
+	for _, param := range parameter {
+		if aws.StringValue(param.ParameterKey) == "Email" {
+			email = *param.ParameterValue
+		}
+	}
+
+	response := Response{
+		Email: email,
+	}
+
+	jsonBytes, _ := json.Marshal(response)
+
+	return events.APIGatewayProxyResponse{
+		Body:       string(jsonBytes),
+		StatusCode: 200,
+	}, nil
 
 }
 
