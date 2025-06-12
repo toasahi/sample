@@ -12,11 +12,12 @@ tags: [GitHub, GitLab, CI/CD, GitHub Actions]
 
 - セキュリティ強化
 	- GitHub Advanced Security
-		- CodeQLによって、コードの静的解析
-	- シークレットスキャン
-		- コード内に含まれるシークレットの検知
-	- Dependency Review
-		- 依存関係のあるパッケージの脆弱性のスキャン
+		- CodeQL
+			- コードの静的解析
+		- シークレットスキャン
+			- コードに含まれるシークレットの検知
+		- Dependency Review
+			- 依存関係のあるパッケージの脆弱性のスキャン
 - コスト
 
 #### GitLab -> GitHub へのリポジトリ移行
