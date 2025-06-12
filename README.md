@@ -30,8 +30,15 @@ git push --mirror
 ```
 
 
-#### GitHub Actions ファイルの説明
-GitHubでCIを実行したい場合は、`.github/workflows`配下にCIのファイルを置
+#### GitLab -> GitHub へのリポジトリ移行に伴う変更点
+- CIのファイルの変更
+- E2Eテストのコード変更
+
+
+
+####  CIのファイルの変更
+GitHubでCIを実行したい場合は、`.github/workflows`配下にCIのファイルを配置しています。
+GitHubのCIはGitHub Actionsと呼びます。
 
 ### GitHub Actions ワークフロー管理のツリーマップ
 
@@ -139,3 +146,7 @@ sequenceDiagram
     GitHub Actions--> 開発者: CIの実行ログ
     QAシステム-> 開発者: テスト結果の確認
 ```
+
+
+####  E2Eテストのコード変更
+GitLab RunnerのCIでのみ使用できる環境変数をGitHub用に変更した。
