@@ -1,0 +1,44 @@
+name: Clone kkk Repository with OIDC
+on:
+  workflow_dispatch:
+  push:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  clone-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: OkonomiTodatti
+          repositories: kkk
+
+      - name: Clone kkk repository
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh repo clone OkonomiTodatti/kkk
+
+      - name: Create file and push to repository
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          cd kkk
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config --local url."https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/".insteadOf "https://github.com/"
+          
+          echo "Created by GitHub Actions at $(date)" > action-created-file.txt
+          git add action-created-file.txt
+          git commit -m "Add file created by GitHub Actions"
+          git push origin main
+          
