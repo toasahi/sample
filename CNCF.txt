@@ -1,40 +1,14 @@
+「現在の業務プロセスの見直しはいかがでしょうか？。具体的には以下の効果が期待できます。
+1. AIに置き換え可能な業務の特定
+• 定型的な作業をAIで自動化し、人的コストを削減
+・Gemini Enterprise の導入が活発化します。
 
-5
-Hi Asahi,
-Thank you for your patience. You are welcome to use photos from the Flickr album with a link and proper credit to CNCF. Thank you for double checking. 
-Our registration terms and conditions inform attendees that photos and videos may be taken, and they have the option to opt out. Once the images are publicly available in the Flickr album, they can be used by the community—provided the usage aligns with our Code of Conduct.
-Thanks,
-Tin Matienzo
-CNCF Events Team 
+2. 属人化の解消
+• 業務の標準化により、特定の担当者に依存しない体制を構築
+• ナレッジの共有化によるリスク軽減
 
+3. 人材の最適配置
+• 優秀な人材を付加価値の高い創造的な業務にシフト
+• 戦略的な業務に集中できる環境を整備
 
-4
-Hi, Tin Matienzo
-Thank you for your reply.
-I understand that if the PowerPoint slides are published in the event schedule, you are allowed to use the photos attached to our company's article. Also, it is okay to use images from the official Flickr album; we will credit CNCF when we use the photos from Filickr.
-I have one more question.
-I see the faces of the speakers and participants in the photos I have attached and in the photos available on Filickr. Is there any portrait rights issue here? We would like to use images that have been authorized by the officials.
-Thank you in advance.
-
-3
-Hi Asahi, 
-Thank you for your patience. We understand you’re planning to share photos of slides in your upcoming article about KubeCon + CloudNativeCon Japan 2025.
-Please note that PowerPoint slides are sometimes made available by speakers in the event schedule, at their discretion. If the slides are publicly shared there, you’re welcome to include photos of them in your article - just be sure to credit the speaker appropriately.
-If the slides are not available through the schedule, we recommend refraining from sharing those photos publicly.
-Additionally, we encourage you to use images from our official Flickr album and credit CNCF when doing so.
-Let us know if you have any further questions.
-Thanks,
-Tin Matienzo
-CNCF Events Team
-
-2
-Hi Asahi,
-Thanks for reaching out. We are reviewing your inquiry and will provide an update shortly. 
-Thank you for your patience! 
-Tin Matienzo
-CNCF Events Team
-
-
-1
-KubeCon + CloudNativeCon Japan 2025 Thank you very much!
-I am looking forward to writing an article about KubeCon + CloudNativeCon Japan 2025. Shi I will attach some photos to the article. I would like to make sure that there are no copyright issues with these photos.
+これにより、業務効率化とコスト削減の両面から利益向上に貢献できると考えます
